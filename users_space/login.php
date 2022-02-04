@@ -1,7 +1,6 @@
 <?php
-
 include '../includes/head.php';
-loadHead("Sign up");
+loadHead("Log out");
 
 ?>
 
@@ -26,10 +25,7 @@ loadHead("Sign up");
             <label for="password">Password</label>
             <input type="password" class="form-control" name="password">
         </div>
-        <div class="form-group">
-            <label for="pic">Profile picture</label>
-            <input type="file" class="form-control" name="picture">
-        </div>
+        
         <button type="submit" class="btn btn-primary" name="validate">Submit</button>
         </form>
 </body>

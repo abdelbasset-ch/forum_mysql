@@ -6,4 +6,7 @@ loadHead("forum");
     <head>
     <?php include 'includes/navbar.php';?>
     </head>
+    <body>
+        <p>to do</p>
+    </body>
 </body>
