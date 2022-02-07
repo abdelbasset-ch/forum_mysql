@@ -1,15 +1,15 @@
 <?php
-
+session_start();
+require_once '../database/users_actions/signup_action.php';
 include '../includes/head.php';
 loadHead("Sign up");
-
 ?>
 
-<body>
+<body class="container">
     <head>
         <?php include '../includes/navbar.php';?>
     </head>
-    <form>
+    <form method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" name="name">
@@ -29,7 +29,7 @@ loadHead("Sign up");
         <div class="form-group">
             <label for="pic">Profile picture</label>
             <input type="file" class="form-control" name="picture">
-        </div>
+        </div><br>
         <button type="submit" class="btn btn-primary" name="validate">Submit</button>
         </form>
 </body>

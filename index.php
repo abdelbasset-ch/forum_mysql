@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'includes/head.php';
 loadHead("forum");
 ?>
@@ -7,6 +8,6 @@ loadHead("forum");
     <?php include 'includes/navbar.php';?>
     </head>
     <body>
-        <p>to do</p>
+        <p><?=  __DIR__;?></p>
     </body>
 </body>
