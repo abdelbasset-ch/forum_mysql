@@ -42,13 +42,13 @@ if(isset($_POST['validate'])){
                 $distination= "/forum_mysql/database/users_actions/pic/$getId.$extension";
                 
                 $updatestm=$db->prepare("UPDATE users SET picture=? WHERE id=?");
-                $updatestm->execute(array($distination,$getId));
-                if(move_uploaded_file($_FILES['picture']['tmp_name'],"$distination")){
-                    echo 'uploaded';
-                };
+                
+                if(move_uploaded_file($_FILES['picture']['tmp_name'],__DIR__."/pic/$getId.$extension")){
+                    $updatestm->execute(array($distination,$getId));
+                }
             }
-            //header('Location:../index.php');
-            //exit();
+            header('Location:../index.php');
+            exit();
         }
     }
 }

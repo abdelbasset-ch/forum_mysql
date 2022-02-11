@@ -8,10 +8,10 @@
     <ul class="navbar-nav mr-auto">
       <?php if(isset($_SESSION['auth']) && $_SESSION['auth']==true):?>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Profile</a>
+        <a class="nav-link" href="/forum_mysql/users_space/profile.php">Profile</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">New question</a>
+        <a class="nav-link" href="/forum_mysql/posts_space/new_post.php">New question</a>
       </li>
       <?php endif?>
     </ul>

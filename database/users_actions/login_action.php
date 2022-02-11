@@ -10,6 +10,10 @@ if(isset($_POST['validate'])){
         if(password_verify($userpass,$getUser['password'])){
             $_SESSION['auth']=true;
             $_SESSION['id']=$getUser['id'];
+            $_SESSION['name']=$getUser['name'];
+            $_SESSION['pseudo']=$getUser['pseudo'];
+            $_SESSION['email']=$getUser['email'];
+            $_SESSION['picture']=$getUser['picture'];
             header('Location:../index.php');
             exit();
         }
