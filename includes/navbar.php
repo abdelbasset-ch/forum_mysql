@@ -17,7 +17,10 @@
     </ul>
   </div>
     <div>
-        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+      <form method="post" id="search">
+        <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search">
+      </form>
+        
     </div>
     <div>
     <?php if(isset($_SESSION['auth']) && $_SESSION['auth']==true):?>

@@ -2,6 +2,7 @@
 session_start();
 require_once '../database/posts_actions/read_post_action.php';
 require_once '../database/posts_actions/new_comment_action.php';
+require_once '../database/posts_actions/get_comments_action.php';
 include '../includes/head.php';
 loadHead($postTitle);
 ?>
@@ -16,7 +17,8 @@ loadHead($postTitle);
         <div class="card-body">
             <p><?= $postContent?></p>
         </div>
-    </div><br>
+    </div>
+    <hr>
     <?php if(isset($_SESSION["auth"])):?>
     <form  method="post">
         <div class="form-group">
@@ -24,4 +26,17 @@ loadHead($postTitle);
         <input type="submit" class="btn btn-primary" name="validate" value="comment">
     </form>
     <?php endif?>
+       <br><br>
+    <?php while($comment=$getCommentsStm->fetch()):?>
+        <div class="card">
+            <div class="card-head">
+                <h4 style="display:Inline-block;"><?=$comment["author_name"]; ?></h4>
+                <p style="display:Inline-block; float: right;"><?=$comment["date"]; ?></p>
+            </div>
+            <hr>
+            <div class="card-body">
+            <p><?=$comment["content"]; ?></p>
+            </div>
+        </div><br>
+    <?php endwhile?>
 </body>

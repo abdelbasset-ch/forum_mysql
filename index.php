@@ -8,7 +8,7 @@ loadHead("forum");
     <head>
     <?php include 'includes/navbar.php';?>
     </head>
-    <body><br>
+    <main><br>
         <?php while($post=$postsQuery->fetch()):?>
             <div class="card" style="padding-right:5px;padding-left:5px">
                 <div class="card-head">
@@ -21,5 +21,12 @@ loadHead("forum");
                 </div>
             </div><br>
             <?php endwhile?>
-    </body>
+        </main>
+        <script>
+            let sr=document.getElementById("search");
+            sr.addEventListener('enter', (event) => {
+                //document.write("ffff");
+                sr.submit();
+            });
+        </script>
 </body>
